@@ -1,3 +1,5 @@
+![ONE](https://github.com/Elainy30/EncriptadorDeTexto/blob/main/img/logo-aluralatam-oracle.svg)
+
 # Encriptador de Texto :lock_with_ink_pen:
 
 Bienvenido al **Encriptador de Texto**, una aplicación web que permite encriptar y desencriptar texto de manera simple y rápida. Esta aplicación está disponible en [GitHub Pages](https://elainy30.github.io/EncriptadorDeTexto/).
