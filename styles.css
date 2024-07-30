@@ -1,50 +1,34 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     background-color: #F3F5FC;
-    font-family: 'Inter', sans-serif;
+    font-family: Inter, sans-serif;
     font-weight: 400;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
-
-header {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+    letter-spacing: 0em;
+    margin: 0;
+    padding: 0;
 }
 
 .logo {
+    position: relative;
+    left: 84px;
+    top: 40px;
     width: 100px;
-    animation: slideInLeft 1s ease-in-out;
 }
 
 #container {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    max-width: 1200px;
-    padding: 20px;
-    gap: 20px;
-}
-
-.input-section, .output-section {
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    flex-basis: 100%;
+    justify-content: center;
+    max-width: 1100px;
+    padding: 20px;
+    gap: 20px; 
 }
 
 .input-section {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
 }
 
 #inputText {
@@ -57,16 +41,23 @@ header {
     background-color: transparent;
     resize: none;
     border: none;
+    outline: none;
     padding: 20px;
-    height: 200px;
+    height: 300px;
+    width: 100%;
 }
 
 .output-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #FFFFFF;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 1s ease-in-out;
+    width: 300px;
+    min-height: 400px; 
+    justify-content: center; 
 }
 
 .output-section img {
@@ -81,6 +72,10 @@ header {
     font-size: 20px;
     line-height: 25px;
     text-align: center;
+    word-wrap: break-word;
+    width: 300px;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
 }
 
 #outputMessage1 {
@@ -90,6 +85,8 @@ header {
     font-size: 16px;
     line-height: 24px;
     text-align: center;
+    word-wrap: break-word;
+    width: 100%;
 }
 
 .info {
@@ -124,6 +121,13 @@ button {
     margin-top: 20px;
     font-weight: bold; 
     border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+button:hover {
+    background-color: #0557b1;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 #encryptButton {
@@ -139,10 +143,21 @@ button {
 }
 
 #copyButton {
-    background-color: #0A3871;
-    color: #FFFFFF;
-    border: none;
-    margin-top: 20px;
+    background-color: #EDEDED;
+    color: #0A3871;
+    border: 1px solid #0A3871;
+    border-radius: 10px;
+    margin-top: auto;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+.clicked-button {
+    background-color: #0A3871 !important;
+    color: #fafafa !important;
 }
 
 .pie-pagina {
@@ -152,7 +167,7 @@ button {
     max-width: 1200px;
     padding: 10px 20px;
     color: #000000;
-    font-weight: bold;
+    font-weight: bold; 
 }
 
 .pie-pagina p {
@@ -168,49 +183,31 @@ button {
 .social-links img {
     width: 30px;
     height: 30px;
+    transition: transform 0.3s ease; 
 }
 
-/* Animaciones */
-@keyframes slideInLeft {
-    from {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+.social-links img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Media Queries */
-@media (min-width: 768px) {
+@media (min-width: 1042px) {
     #container {
         flex-direction: row;
+        justify-content: space-around;
         padding-left: 80px;
     }
 
     .input-section {
-        flex-basis: 55%;
-    }
-
-    .output-section {
-        flex-basis: 30%;
-        padding: 50px;
+        align-items: flex-start;
     }
 
     #inputText {
         font-size: 32px;
         line-height: 48px;
         height: calc(100% - 70px);
+        width: auto;
         margin-top: 100px;
     }
 
